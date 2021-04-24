@@ -1,0 +1,133 @@
+﻿<Window x:Class="ChordGeneratorWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChordGeneratorWPF"
+        mc:Ignorable="d" FontSize="22" FontWeight="Bold" 
+        Title="ChordGenerator" ResizeMode="CanMinimize" Height="543.6" Width="950">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="23" Background="#181735"/>
+        <Border Grid.Row="4" Margin="0,25"/>
+        <Border Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="23" Background="BlueViolet"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Margin="10,0" TextAlignment="Center" Text="Key"/>
+        <TextBlock Grid.Row="1" Grid.Column="6" TextAlignment="Center" Grid.ColumnSpan="3" Text="Modificator"/>
+        <TextBlock Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="4" Margin="40,0" Text="Mode"/>
+        <TextBlock Grid.Row="1" Grid.Column="12" Grid.ColumnSpan="4" TextAlignment="Center" Text="Mood"/>
+        <ComboBox Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="3" Name="key" FontSize="18" SelectedValuePath="Content" Margin="16,15">
+            <ComboBoxItem IsSelected="True">C</ComboBoxItem>
+            <ComboBoxItem >D</ComboBoxItem>
+            <ComboBoxItem>E</ComboBoxItem>
+            <ComboBoxItem>F</ComboBoxItem>
+            <ComboBoxItem>G</ComboBoxItem>
+            <ComboBoxItem>A</ComboBoxItem>
+            <ComboBoxItem>B</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Grid.Row="2" Grid.Column="6" Grid.RowSpan="2" Grid.ColumnSpan="3" SelectedValuePath="Content" Name="modificator" FontSize="18" Margin="16,15">
+            <ComboBoxItem IsSelected="True"> </ComboBoxItem>
+            <ComboBoxItem >#</ComboBoxItem>
+            <ComboBoxItem>b</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Grid.Row="2" Grid.Column="9" Grid.RowSpan="2" Grid.ColumnSpan="3" SelectedValuePath="Content"  Name="mode" FontSize="18" Margin="25,15,10,15">
+            <ComboBoxItem IsSelected="True">major</ComboBoxItem>
+            <ComboBoxItem >minor</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Grid.Row="2" Grid.Column="12" Grid.RowSpan="2" Grid.ColumnSpan="4" SelectedValuePath="Content" Name="mood" FontSize="18" Margin="10,15">
+            <ComboBoxItem>Alternative</ComboBoxItem>
+            <ComboBoxItem>Basic</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Cliché</ComboBoxItem>
+            <ComboBoxItem>Energy</ComboBoxItem>
+            <ComboBoxItem>Extra</ComboBoxItem>
+            <ComboBoxItem>Memories</ComboBoxItem>
+            <ComboBoxItem>Never Ending</ComboBoxItem>
+            <ComboBoxItem>Nostalgy</ComboBoxItem>
+            <ComboBoxItem>Riot</ComboBoxItem>
+            <ComboBoxItem>Sad</ComboBoxItem>
+            <ComboBoxItem>Strange</ComboBoxItem>
+            <ComboBoxItem>Weird</ComboBoxItem>
+        </ComboBox>
+        <Button Grid.Row="2" Grid.Column="16" FontSize="18" Grid.RowSpan="2" Grid.ColumnSpan="3" Content="Generate" Click="GenerateChords_Click" Margin="20,15,5,15"/>
+        <Button Grid.Row="2" Grid.Column="19" FontSize="18" Grid.RowSpan="2" Grid.ColumnSpan="3" Content="Randomize" Click="RandomizeBtn_Click" Margin="10,15,5,15"/>
+        <Border Grid.Row="4" Grid.RowSpan="11" Grid.ColumnSpan="23" Background="MediumPurple"/>
+        <TextBlock Grid.Row="4" Grid.Column="3" Grid.RowSpan="2" Margin="40,15,0,10" TextAlignment="Center" Grid.ColumnSpan="7" Text="MAIN PROGRESSION"/>
+        <TextBlock Grid.Row="4" Grid.Column="14" Grid.RowSpan="2" Margin="10,15,10,10" Grid.ColumnSpan="8" Text="ALTERNATE PROGRESSION"/>
+        
+        <Button x:Name="button1" Grid.Row="6" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="C" Click="Button1_Click" Margin="16,15,16,15"/>
+        <Button x:Name="button2" Grid.Row="6" Grid.Column="5" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="G" Click="Button2_Click" Margin="16,15,16,15"/>
+        <Button x:Name="button3" Grid.Row="6" Grid.Column="7" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="Am" Click="Button3_Click" Margin="16,15,16,15"/>
+        <Button x:Name="button4" Grid.Row="6" Grid.Column="9" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="F" Click="Button4_Click" Margin="16,15,16,15"/>
+
+        <Button x:Name="PlayProgressionBtn" Grid.Row="8" Grid.Column="5" Grid.RowSpan="2" Grid.ColumnSpan="4" FontSize="18" Click="PlayProgressionBtn_Click" Content="PlayProgression" Margin="0,10"/>
+
+        <Button x:Name="button17" Grid.Row="10" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="C" Click="Button17_Click" Margin="10.2,14.8,21.4,15.4"/>
+        <Button x:Name="button18" Grid.Row="10" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="3" FontSize="18" Content="D m" Click="Button18_Click" Margin="27,15,42,15"/>
+        <Button x:Name="button19" Grid.Row="10" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="3" FontSize="18" Content="E m" Click="Button19_Click" Margin="10,15,55,15"/>
+        <Button x:Name="button20" Grid.Row="10" Grid.Column="5" Grid.RowSpan="2" Grid.ColumnSpan="3" FontSize="18" Content="F" Click="Button20_Click" Margin="37,15,35,15"/>
+        <Button x:Name="button21" Grid.Row="10" Grid.Column="7" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="G" Click="Button21_Click" Margin="15,15,15,15"/>
+        <Button x:Name="button22" Grid.Row="10" Grid.Column="8" Grid.RowSpan="2" Grid.ColumnSpan="3" FontSize="18" Content="Am" Click="Button22_Click" Margin="40,15,30,15"/>
+        <Button x:Name="button23" Grid.Row="10" Grid.Column="10" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="B dim" Click="Button23_Click" Margin="25,15,5,15"/>
+
+        <Button x:Name="button5" Grid.Row="6" Grid.Column="13" Grid.RowSpan="2" Grid.ColumnSpan="3" FontSize="18" Content="A m" Click="Button5_Click" Margin="15,15,55,15"/>
+        <Button x:Name="button6" Grid.Row="6" Grid.Column="15" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="E m" Click="Button6_Click" Margin="5,15,18,15"/>
+        <Button x:Name="button7" Grid.Row="6" Grid.Column="17" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="F" Click="Button7_Click" Margin="0,15,25,15"/>
+        <Button x:Name="button8" Grid.Row="6" Grid.Column="18" Grid.RowSpan="2" Grid.ColumnSpan="3" FontSize="18" Content="D m" Click="Button8_Click" Margin="35,15,35,15"/>
+        <Button x:Name="Play1" Grid.Row="6" Grid.Column="20" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="=>" Click="Play1_Click" Margin="20,15,5,15"/>
+
+        <Button x:Name="button9" Grid.Row="8" Grid.Column="13" Grid.RowSpan="2" Grid.ColumnSpan="3" FontSize="18" Content="G" Click="Button9_Click" Margin="15,15,55,15"/>
+        <Button x:Name="button10" Grid.Row="8" Grid.Column="15" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="D" Click="Button10_Click" Margin="5,15,18,15"/>
+        <Button x:Name="button11" Grid.Row="8" Grid.Column="17" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="E m" Click="Button11_Click" Margin="0,15,25,15"/>
+        <Button x:Name="button12" Grid.Row="8" Grid.Column="18" Grid.RowSpan="2" Grid.ColumnSpan="3" FontSize="18" Content="C" Click="Button12_Click" Margin="35,15,35,15"/>
+        <Button x:Name="Play2" Grid.Row="8" Grid.Column="20" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="=>" Click="Play2_Click" Margin="20,15,5,15"/>
+
+        <Button x:Name="button13" Grid.Row="10" Grid.Column="13" Grid.RowSpan="2" Grid.ColumnSpan="3" FontSize="18" Content="F" Click="Button13_Click" Margin="15,15,55,15"/>
+        <Button x:Name="button14" Grid.Row="10" Grid.Column="15" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="C" Click="Button14_Click" Margin="5,15,18,15"/>
+        <Button x:Name="button15" Grid.Row="10" Grid.Column="17" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="D m" Click="Button15_Click" Margin="0,15,25,15"/>
+        <Button x:Name="button16" Grid.Row="10" Grid.Column="18" Grid.RowSpan="2" Grid.ColumnSpan="3" FontSize="18" Content="Bb" Click="Button16_Click" Margin="35,15,35,15"/>
+        <Button x:Name="Play3" Grid.Row="10" Grid.Column="20" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="18" Content="=>" Click="Play3_Click" Margin="20,15,5,15"/>
+        <Border Grid.Row="14" Grid.RowSpan="3" Grid.ColumnSpan="23" Background="Red"/>
+    </Grid>
+</Window>
